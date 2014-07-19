@@ -3,6 +3,9 @@
 #             If the inverse has already been calculated (and the matrix has not changed), then cacheSolve retrieves the inverse
 #             from the cache.
 
+
+# makeCacheMatrix: This function creates a special "matrix" object that can cache its inverse. Make a matrix by passing
+# matrix you want to find inverse for to thsi function. 
 makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
   set <- function(y) {
@@ -17,7 +20,7 @@ makeCacheMatrix <- function(x = matrix()) {
        getInv = getInv)
 }
 
-
+# Call this function with desired matrix to find the inverse. It will return a message if you are selecting cached data
 cacheSolve <- function(x, ...) {
   message("getting in")
   m <- x$getInv()
